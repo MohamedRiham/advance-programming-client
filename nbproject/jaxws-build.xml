@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/customer"/>
         <delete dir="${build.generated.dir}/jax-wsCache/customer"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-customer"/>
+    <target name="wsimport-client-admin" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/admin"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/admin" destdir="${build.generated.dir}/jax-wsCache/admin" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/admin/wsdl/localhost_8080/api/admin.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/api/admin?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/admin/wsdl/localhost_8080/api/admin.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/admin"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/admin">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-admin" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/admin"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/admin"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-customer, wsimport-client-admin"/>
 </project>
