@@ -21,9 +21,12 @@
 	 // TODO initialize WS operation arguments here
 	java.lang.String fullname = request.getParameter("fname");
 	java.lang.String email = request.getParameter("email");
+
+String ageStr = request.getParameter("age");
+int age = Integer.parseInt(ageStr);
 	java.lang.String password = request.getParameter("password");
 	// TODO process result here
-	java.lang.String result = port.register(fullname, email, password);
+	java.lang.String result = port.register(fullname, email, age ,password);
 out.println("Result = "+result);
     
     } catch (Exception ex) {

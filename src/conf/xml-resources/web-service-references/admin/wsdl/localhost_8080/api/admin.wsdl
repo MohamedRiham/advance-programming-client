@@ -4,31 +4,31 @@
 <xsd:import namespace="http://admin/" schemaLocation="http://localhost:8080/api/admin?xsd=1" />
 </xsd:schema>
 </types>
-<message name="authenticate">
-<part name="parameters" element="tns:authenticate" />
-</message>
-<message name="authenticateResponse">
-<part name="parameters" element="tns:authenticateResponse" />
-</message>
 <message name="logging">
 <part name="parameters" element="tns:logging" />
 </message>
 <message name="loggingResponse">
 <part name="parameters" element="tns:loggingResponse" />
 </message>
+<message name="getCustomers">
+<part name="parameters" element="tns:getCustomers" />
+</message>
+<message name="getCustomersResponse">
+<part name="parameters" element="tns:getCustomersResponse" />
+</message>
 <portType name="admin">
-<operation name="authenticate">
-<input wsam:Action="http://admin/admin/authenticateRequest" message="tns:authenticate" />
-<output wsam:Action="http://admin/admin/authenticateResponse" message="tns:authenticateResponse" />
-</operation>
 <operation name="logging">
 <input wsam:Action="http://admin/admin/loggingRequest" message="tns:logging" />
 <output wsam:Action="http://admin/admin/loggingResponse" message="tns:loggingResponse" />
 </operation>
+<operation name="getCustomers">
+<input wsam:Action="http://admin/admin/getCustomersRequest" message="tns:getCustomers" />
+<output wsam:Action="http://admin/admin/getCustomersResponse" message="tns:getCustomersResponse" />
+</operation>
 </portType>
 <binding name="adminPortBinding" type="tns:admin">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="authenticate">
+<operation name="logging">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -37,7 +37,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="logging">
+<operation name="getCustomers">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
