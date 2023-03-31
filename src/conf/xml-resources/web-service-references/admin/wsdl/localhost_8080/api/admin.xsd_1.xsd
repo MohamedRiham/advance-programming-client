@@ -1,8 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://admin/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://admin/">
 
+<xs:element name="AddProduct" type="tns:AddProduct" />
+
+<xs:element name="AddProductResponse" type="tns:AddProductResponse" />
+
+<xs:element name="EditProduct" type="tns:EditProduct" />
+
+<xs:element name="EditProductResponse" type="tns:EditProductResponse" />
+
 <xs:element name="getCustomers" type="tns:getCustomers" />
 
 <xs:element name="getCustomersResponse" type="tns:getCustomersResponse" />
+
+<xs:element name="getProducts" type="tns:getProducts" />
+
+<xs:element name="getProductsResponse" type="tns:getProductsResponse" />
 
 <xs:element name="logging" type="tns:logging" />
 
@@ -16,6 +28,44 @@
 </xs:complexType>
 
 <xs:complexType name="loggingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProducts">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="getProductsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EditProduct">
+<xs:sequence>
+<xs:element name="pname" type="xs:string" minOccurs="0" />
+<xs:element name="pprice" type="xs:int" />
+<xs:element name="quantity" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EditProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddProduct">
+<xs:sequence>
+<xs:element name="ProductName" type="xs:string" minOccurs="0" />
+<xs:element name="ProductPrice" type="xs:int" />
+<xs:element name="Quantity" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddProductResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
