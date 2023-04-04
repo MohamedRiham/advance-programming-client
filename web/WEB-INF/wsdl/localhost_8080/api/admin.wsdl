@@ -4,23 +4,11 @@
 <xsd:import namespace="http://admin/" schemaLocation="http://localhost:8080/api/admin?xsd=1" />
 </xsd:schema>
 </types>
-<message name="AddProduct">
-<part name="parameters" element="tns:AddProduct" />
+<message name="viewOrders">
+<part name="parameters" element="tns:viewOrders" />
 </message>
-<message name="AddProductResponse">
-<part name="parameters" element="tns:AddProductResponse" />
-</message>
-<message name="EditProduct">
-<part name="parameters" element="tns:EditProduct" />
-</message>
-<message name="EditProductResponse">
-<part name="parameters" element="tns:EditProductResponse" />
-</message>
-<message name="getProducts">
-<part name="parameters" element="tns:getProducts" />
-</message>
-<message name="getProductsResponse">
-<part name="parameters" element="tns:getProductsResponse" />
+<message name="viewOrdersResponse">
+<part name="parameters" element="tns:viewOrdersResponse" />
 </message>
 <message name="logging">
 <part name="parameters" element="tns:logging" />
@@ -28,55 +16,59 @@
 <message name="loggingResponse">
 <part name="parameters" element="tns:loggingResponse" />
 </message>
+<message name="EditProduct">
+<part name="parameters" element="tns:EditProduct" />
+</message>
+<message name="EditProductResponse">
+<part name="parameters" element="tns:EditProductResponse" />
+</message>
 <message name="getCustomers">
 <part name="parameters" element="tns:getCustomers" />
 </message>
 <message name="getCustomersResponse">
 <part name="parameters" element="tns:getCustomersResponse" />
 </message>
+<message name="getProducts">
+<part name="parameters" element="tns:getProducts" />
+</message>
+<message name="getProductsResponse">
+<part name="parameters" element="tns:getProductsResponse" />
+</message>
+<message name="AddProduct">
+<part name="parameters" element="tns:AddProduct" />
+</message>
+<message name="AddProductResponse">
+<part name="parameters" element="tns:AddProductResponse" />
+</message>
 <portType name="admin">
-<operation name="AddProduct">
-<input wsam:Action="http://admin/admin/AddProductRequest" message="tns:AddProduct" />
-<output wsam:Action="http://admin/admin/AddProductResponse" message="tns:AddProductResponse" />
-</operation>
-<operation name="EditProduct">
-<input wsam:Action="http://admin/admin/EditProductRequest" message="tns:EditProduct" />
-<output wsam:Action="http://admin/admin/EditProductResponse" message="tns:EditProductResponse" />
-</operation>
-<operation name="getProducts">
-<input wsam:Action="http://admin/admin/getProductsRequest" message="tns:getProducts" />
-<output wsam:Action="http://admin/admin/getProductsResponse" message="tns:getProductsResponse" />
+<operation name="viewOrders">
+<input wsam:Action="http://admin/admin/viewOrdersRequest" message="tns:viewOrders" />
+<output wsam:Action="http://admin/admin/viewOrdersResponse" message="tns:viewOrdersResponse" />
 </operation>
 <operation name="logging">
 <input wsam:Action="http://admin/admin/loggingRequest" message="tns:logging" />
 <output wsam:Action="http://admin/admin/loggingResponse" message="tns:loggingResponse" />
 </operation>
+<operation name="EditProduct">
+<input wsam:Action="http://admin/admin/EditProductRequest" message="tns:EditProduct" />
+<output wsam:Action="http://admin/admin/EditProductResponse" message="tns:EditProductResponse" />
+</operation>
 <operation name="getCustomers">
 <input wsam:Action="http://admin/admin/getCustomersRequest" message="tns:getCustomers" />
 <output wsam:Action="http://admin/admin/getCustomersResponse" message="tns:getCustomersResponse" />
 </operation>
+<operation name="getProducts">
+<input wsam:Action="http://admin/admin/getProductsRequest" message="tns:getProducts" />
+<output wsam:Action="http://admin/admin/getProductsResponse" message="tns:getProductsResponse" />
+</operation>
+<operation name="AddProduct">
+<input wsam:Action="http://admin/admin/AddProductRequest" message="tns:AddProduct" />
+<output wsam:Action="http://admin/admin/AddProductResponse" message="tns:AddProductResponse" />
+</operation>
 </portType>
 <binding name="adminPortBinding" type="tns:admin">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="AddProduct">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="EditProduct">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="getProducts">
+<operation name="viewOrders">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -94,7 +86,34 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="EditProduct">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="getCustomers">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="getProducts">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="AddProduct">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

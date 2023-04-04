@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <center>
+    <h1>enter details</h1>
+    <form action = "logging.jsp" method =  "post">
+<p>
+<label for="User Name">user name:</label>
+<input type="text" name="un" required/>
+</p>
+
+<p>
+<label for="password">password:</label>
+<input type="text" name="pass" id = "myInput" required>
+</p>
+<input type="checkbox" onclick="myFunction()">Show Password<br>
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+   <input type="submit" value="Submit">
+
+    </center>
+</form>
+    </body>
+</html>

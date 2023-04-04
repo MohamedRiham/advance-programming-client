@@ -20,6 +20,10 @@
 
 <xs:element name="loggingResponse" type="tns:loggingResponse" />
 
+<xs:element name="viewOrders" type="tns:viewOrders" />
+
+<xs:element name="viewOrdersResponse" type="tns:viewOrdersResponse" />
+
 <xs:complexType name="logging">
 <xs:sequence>
 <xs:element name="username" type="xs:string" minOccurs="0" />
@@ -76,6 +80,16 @@
 </xs:complexType>
 
 <xs:complexType name="getCustomersResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewOrders">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="viewOrdersResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

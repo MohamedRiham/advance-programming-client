@@ -45,13 +45,24 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password" required/>
+						<input class="input100" type="password" name="pass" id="myInput" placeholder="Password" required/>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
+<input type="checkbox" onclick="myFunction()">Show Password<br>
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login

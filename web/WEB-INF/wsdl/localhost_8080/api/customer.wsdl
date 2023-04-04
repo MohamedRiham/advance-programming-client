@@ -10,15 +10,53 @@
 <message name="registerResponse">
 <part name="parameters" element="tns:registerResponse" />
 </message>
+<message name="orderProduct">
+<part name="parameters" element="tns:orderProduct" />
+</message>
+<message name="orderProductResponse">
+<part name="parameters" element="tns:orderProductResponse" />
+</message>
+<message name="logging">
+<part name="parameters" element="tns:logging" />
+</message>
+<message name="loggingResponse">
+<part name="parameters" element="tns:loggingResponse" />
+</message>
 <portType name="customer">
 <operation name="register">
 <input wsam:Action="http://customer/customer/registerRequest" message="tns:register" />
 <output wsam:Action="http://customer/customer/registerResponse" message="tns:registerResponse" />
 </operation>
+<operation name="orderProduct">
+<input wsam:Action="http://customer/customer/orderProductRequest" message="tns:orderProduct" />
+<output wsam:Action="http://customer/customer/orderProductResponse" message="tns:orderProductResponse" />
+</operation>
+<operation name="logging">
+<input wsam:Action="http://customer/customer/loggingRequest" message="tns:logging" />
+<output wsam:Action="http://customer/customer/loggingResponse" message="tns:loggingResponse" />
+</operation>
 </portType>
 <binding name="customerPortBinding" type="tns:customer">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
 <operation name="register">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="orderProduct">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="logging">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

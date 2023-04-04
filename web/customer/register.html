@@ -23,7 +23,7 @@
                     <form method="POST" id="signup-form" action="register.jsp" class="signup-form">
                         <h2 class="form-title">Create account</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="fname" id="name" placeholder="Your Name" required/>
+                            <input type="text" class="form-input" name="fname" id="username" placeholder="Your Name" required/>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" required/>
@@ -33,17 +33,34 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password" required/>
-                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
                         </div>
+
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                            <input type="submit" onclick="saveUsername()" name="submit" id="submit" class="form-submit" value="Sign up"/>
                         </div>
+<script>
+	function saveUsername() {
+		var usernameInput = document.getElementById("username");
+		var username = usernameInput.value;
+		localStorage.setItem("username", username);
+	}
+
+function togglePasswordVisibility() {
+  var passwordField = document.getElementById("password");
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+  } else {
+    passwordField.type = "password";
+  }
+}
+</script>
+
                     </form>
                     
                     
                     <p class="loginhere">
-                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                        Have already an account ? <a href = "login.html" class="loginhere-link">Login here</a>
                     </p>
                 </div>
             </div>

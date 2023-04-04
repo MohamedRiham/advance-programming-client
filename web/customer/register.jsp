@@ -27,8 +27,12 @@ int age = Integer.parseInt(ageStr);
 	java.lang.String password = request.getParameter("password");
 	// TODO process result here
 	java.lang.String result = port.register(fullname, email, age ,password);
-out.println("Result = "+result);
-    
+if (result.equals("Registration successful!")) {
+        response.sendRedirect("place order.jsp");
+    }
+    else {
+            out.println(result);
+}
     } catch (Exception ex) {
     out.println("An error occurred: " + ex.getMessage());
     ex.printStackTrace();

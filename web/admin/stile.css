@@ -1,0 +1,27 @@
+body {
+background-color: gray;
+padding: 25px;
+		font-size: 25px;
+}
+
+.navigation{
+  -webkit-text-stroke: 1px brown;
+  color:yellow;
+  font-family: "Times New Roman", Times, serif; 
+ opacity:0.8;
+  background-color: white;
+  border: 4px groove orange;
+  font-size: 30px;
+  margin: 7px;
+  padding: 10px;
+  text-align:center;
+}
+
+.form{
+}
+
+h1 {
+     text-align: center;
+}
+
+

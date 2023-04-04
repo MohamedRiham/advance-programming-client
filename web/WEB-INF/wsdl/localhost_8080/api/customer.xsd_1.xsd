@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://customer/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://customer/">
 
+<xs:element name="logging" type="tns:logging" />
+
+<xs:element name="loggingResponse" type="tns:loggingResponse" />
+
+<xs:element name="orderProduct" type="tns:orderProduct" />
+
+<xs:element name="orderProductResponse" type="tns:orderProductResponse" />
+
 <xs:element name="register" type="tns:register" />
 
 <xs:element name="registerResponse" type="tns:registerResponse" />
@@ -14,6 +22,33 @@
 </xs:complexType>
 
 <xs:complexType name="registerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logging">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loggingResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orderProduct">
+<xs:sequence>
+<xs:element name="customername" type="xs:string" minOccurs="0" />
+<xs:element name="productname" type="xs:string" minOccurs="0" />
+<xs:element name="qty" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orderProductResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
